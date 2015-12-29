@@ -1,0 +1,1 @@
+nohup ./mirror.sh &
