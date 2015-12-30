@@ -23,7 +23,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     docker push "$destination_registry$line"
 
     # Example: docker rmi 42.62.101.165:5000/centos
-    docker rmi "$destination_registry$line"
+    docker rmi -f "$destination_registry$line"
 
     # Read file to determine if we want to buffer images locally
     if grep -Fxq $line save.conf
@@ -32,7 +32,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     else
         echo "Remove the image $line from local"
         # Example: docker rmi index.alauda.cn/library/redmine
-        docker rmi "$source_registry$line"
+        docker rmi -f "$source_registry$line"
     fi
 
 done < "$filename"
