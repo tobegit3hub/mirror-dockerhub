@@ -4,10 +4,11 @@ set -x
 
 # Configure these parameters
 filename="repo.conf"
-#source_registry=""
-source_registry="index.alauda.cn/library/"
-#destination_registry="127.0.0.1:5000/"
-destination_registry="42.62.101.165:5000/"
+#filename="repo_dockerhub.conf"
+source_registry=""
+#source_registry="index.alauda.cn/library/"
+destination_registry="127.0.0.1:5000/"
+#destination_registry="42.62.101.165:5000/"
 
 # Read file to pull images
 while IFS='' read -r line || [[ -n "$line" ]]; do
